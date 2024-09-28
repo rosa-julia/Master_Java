@@ -23,6 +23,7 @@ public class Conta {
     }
 
     public double getSaldo() {
+        System.out.println("Saldo atual R$: " +saldo);
         return saldo;
     }
     
