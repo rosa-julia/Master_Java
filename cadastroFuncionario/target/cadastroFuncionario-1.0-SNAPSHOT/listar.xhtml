@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Lista</title>
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            .button-group {
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+            }
+            .full-height {
+                height: 100vh;
+                background-color: #00435c; /* Adiciona a cor de fundo */
+                color: aliceblue; /* Define a cor do texto */
+            }
+            .center-form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .inline-buttons {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+            .form-group {
+                margin-bottom: 20px;
+            }
+            /* Estilo para o título e conteúdo da tabela */
+            .table th, .table td {
+                color: aliceblue; /* Define a cor do texto para branco */
+            }
+            /* Ajusta a cor do fundo das linhas da tabela para um melhor
+            contraste */
+            .table-striped tbody tr:nth-of-type(odd) {
+                background-color: #00334c; /* Fundo mais escuro para as linhas
+                ímpares */
+            }
+            .table-striped tbody tr:nth-of-type(even) {
+                background-color: #00435c; /* Fundo para as linhas pares */
+            }
+        </style>
+    </h:head>
+    <h:body class="full-height">
+        <h1 class="text-center mb-4">Lista de Funcionários</h1>
+        <h:form>
+            <div class="button-group mb-3">
+                <h:commandButton value="Novo Funcionário"
+                                 action="cadastrarPessoa.xhtml" styleClass="btn btn-success"/>
+                <h:commandButton value="Inicio" action="index.xhtml"
+                                 styleClass="btn btn-primary"/>
+            </div>
+            <h:dataTable value="#{pessoaMB.pessoas}" var="p" border="1"
+                         styleClass="table table-striped">
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                        #{p.nome}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Telefone</f:facet>
+                        #{p.telefone}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                        #{p.email}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Endereço</f:facet>
+                        #{p.endereco}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Cargo</f:facet>
+                        #{p.cargo}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Salário</f:facet>
+                        #{p.salario}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Setor</f:facet>
+                        #{p.setor}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Entrada</f:facet>
+                        #{p.entrada}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Observação</f:facet>
+                        #{p.observacao}
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>SGFD</title>
+    <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+.spaced-button {
+margin-right: 10px;
+}
+.full-height {
+height: 100vh;
+background-color: #00435c; /* Adiciona a cor de fundo */
+color: aliceblue; /* Define a cor do texto */
+}
+.center-form {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.inline-buttons {
+display: flex;
+justify-content: space-around;
+width: 100%;
+}
+.form-group {
+margin-bottom: 20px;
+}
+.logout-button {
+position: fixed;
+top: 20px;
+right: 20px;
+z-index: 9999; /* Certifica que o botão está acima de outros elementos*/
+}
+</style>
+</h:head>
+<h:body class="full-height">
+<div class="container center-form">
+<div class="col-md-8 text-center">
+<h1>SGFD</h1>
+<br/>
+<h2>SISTEMA DE GERENCIAMENTO DE FUNCIONÁRIOS DIVERSOS</h2>
+<br/>
+<br/>
+<br/>
+<h:form>
+<div class="form-group text-center inline-buttons">
+<h:commandButton value="Novo Funcionário" action="cadastrarPessoa.xhtml" styleClass="btn btn-primary spaced-button" />
+<h:commandButton value="Visualizar Cadastrados" action="listar.xhtml" styleClass="btn btn-primary spaced-button" />
+<h:commandButton value="Gerenciar Funcionário" action="gerenciar.xhtml" styleClass="btn btn-primary spaced-button" />
+</div>
+<div class="form-group logout-button">
+<h:commandButton value="Sair" action="login.xhtml" styleClass="btn btn-danger" />
+</div>
+</h:form>
+</div>
+</div>
+</h:body>
+</html>
