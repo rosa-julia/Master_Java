@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Login</title> <!-- Título da página -->
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+              />
+        <!-- Link para o arquivo CSS do Bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Link para a biblioteca jQuery -->
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Link para o Popper.js, usado pelo Bootstrap -->
+        <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Link para o arquivo JS do Bootstrap -->                
+            <style> .full-height {
+        height: 100vh;
+        background-color: #00435c; /* Adiciona a cor de fundo */
+        color: aliceblue; /* Define a cor do texto */}
+    .center-form {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        height: 100%;
+    }
+    .form-container {
+        background-color: #00334c; /* Fundo do contêiner do formulário */
+        padding: 20px;
+        border-radius: 8px;
+    }
+            </style>
+            <!-- Estilos personalizados para a página -->
+    </h:head>
+    <h:body class="full-height">
+        <!-- Define a altura do corpo como 100vh e aplica o fundo e a cor do texto -->
+        <div class="            container center-form">
+            <!-- Container para centr            alizar o formulário -->
+            <div class="co                l-md-4 form-container">
+                <!-- Coluna que contém o formulário com fundo personalizado -->
+                <h1 class="text-cente                r mb-4">Faça login</h1>
+                <!-- Título do formulário, centralizado e com margem inferior -->
+                <h:form>
+                    <!-- Formulário JSF -->
+                    <div class="form-group">
+                        <!-- Grupo de form controls -->
+                        <h:outputLabel for="nome" value="Nome:" />
+                        <!-- Rótulo para o campo de nome -->
+                        <h:inputText id="nome" value="#{login.nome}"
+                                     styleClass="form-control" />
+                                     <!-- Campo de entrada de texto para nome -->
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="senha" value="Senha:" />
+                        <!-- Rótulo para o campo de senha -->
+                        <h:inputSecret id="senha" value="#{login.senha}"
+                                       styleClass="form-control" />
+                        <!-- Campo de entrada de senha -->
+                    </div>
+                    <div class="form-group text-center">
+                        <h:commandButton value="Entrar"
+                                         action="#{login.validarLogin}" styleClass="btn btn-primary spaced-button" />
+                        <!-- Botão para enviar o formulário com estilo Bootstrap -->
+                    </div>
+                    <h:messages globalOnly="true" showDetail="true"
+                                showSummary="true" />
+                    <!-- Mensagens de feedback do JSF -->
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>
